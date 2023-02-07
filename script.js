@@ -29,7 +29,7 @@ function menu(){
  }
  
  if (num >= 4000) {
- alert("Input number must be less than 4000";)
+ alert("Input number must be less than 4000");
  }
  
  var digits = num.toString().split("").reverse();
