@@ -48,8 +48,8 @@ font-size:15px;
    outline:none;
 }
 .btn1:active, .btn2:active {
-color:white;
-background-color:black;
+color:#1f325c;
+background-color:white;
 }
 footer {
 color:white;

@@ -15,33 +15,30 @@ function menu(){
  var z = document.getElementById("mc")
  z.style.display ="none"
  }function convertToRoman() {
- const number = document.getElementById("n1").value;
- let romanNumeral = "";
- const romanNumerals = [
- "M",
- "CM",
- "D",
- "CD",
- "C",
- "XC",
- "L",
- "XL",
- "X",
- "IX",
- "V",
- "IV",
- "I"
+ var num = document.getElementById("n1").value;
+ var roman = "";
+ var romanNumeral = [
+ ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+ ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+ ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+ ["", "M", "MM", "MMM", "MMMM"]
  ];
- const numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
  
- for (let i = 0; i < numbers.length; i++) {
- while (number >= numbers[i]) {
- romanNumeral += romanNumerals[i];
- number -= numbers[i];
- }
+ if (num === 0) {
+ return "N/A";
  }
  
- document.getElementById("r1").value = romanNumeral;
+ if (num >= 4000) {
+ alert("Input number must be less than 4000";)
+ }
+ 
+ var digits = num.toString().split("").reverse();
+ 
+ for (var i = 0; i < digits.length; i++) {
+ roman = romanNumeral[i][parseInt(digits[i])] + roman;
+ }
+ 
+ document.getElementById("r1").value = roman;
  }
  
  function convert2() {
